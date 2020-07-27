@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 
 const initPuzzle = {
-  screen: 'start-page',
-  mode: 'image and words',
+  screen: 'main-page',
+  mode: 'warm-up',
   data: []
 };
 
@@ -19,16 +19,16 @@ function reducer(state, action) {
   }
 }
 
-const PuzzleContext = React.createContext(initPuzzle);
+const SongbirdContext = React.createContext(initPuzzle);
 
-const PuzzleContextProvider = ({ children }) => {
+const SongbirdContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initPuzzle);
 
   return (
-    <PuzzleContext.Provider value={{ state, dispatch }}>
+    <SongbirdContext.Provider value={{ state, dispatch }}>
       { children }
-    </PuzzleContext.Provider>
+    </SongbirdContext.Provider>
   );
 };
 
-export { PuzzleContext, PuzzleContextProvider };
+export { SongbirdContext, SongbirdContextProvider };
