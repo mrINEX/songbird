@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import {
-  BrowserRouter, Switch, Route,
+  BrowserRouter, Switch, Route, Redirect,
 } from 'react-router-dom';
 import Header from './header/header';
 import { SongbirdContext } from './state';
@@ -32,6 +32,7 @@ function App() {
           <Route exact path="/sea_birds">
             <Main typeBirds={state.data[5]} />
           </Route>
+          <Redirect to={'/warm-up'} />
         </Switch>
       </div>
     </BrowserRouter>

@@ -5,21 +5,23 @@ import BirdInfo from './bird-info.main';
 import randomInteger from '../other/random';
 import style from './main.module.scss';
 import { SongbirdContext } from '../state';
+import { useHistory } from "react-router-dom";
 
 const Main = (props) => {
   const { typeBirds } = props;
   const { state, dispatch } = useContext(SongbirdContext);
+  const history = useHistory();
   
   const [currentBirdClick, setCurrentBirdClick] = useState(null);
   const [topImage, setTopImage] = useState(birdnone);
   const [nameBird, setNameBird] = useState('*******');
   const [isNext, setIsNext] = useState('');
-  const [handlerNext, setHandlerNext] = useState();
+  const [handlerNext, setHandlerNext] = useState(false);
 
   function handler() {
-    return () => {
-      console.log('next running');
-    }
+    let level = state.modeAll.indexOf(history.location.pathname);
+    dispatch({ type: 'set mode', value: state.modeAll[(level + 1) % 6] });
+    history.push(state.modeAll[level + 1]);
   }
 
   const currentBirdGuess = useMemo(
@@ -28,10 +30,10 @@ const Main = (props) => {
       setNameBird('*******');
       setCurrentBirdClick(null);
       setIsNext('');
+      setHandlerNext(false);
       return typeBirds[randomInteger(0, typeBirds.length - 1)];
     }, [typeBirds]
   );
-  console.log('here:', currentBirdGuess.name);
 
   function handlerBirds(e) {
     setCurrentBirdClick(typeBirds[e.target.id - 1]);
@@ -39,8 +41,8 @@ const Main = (props) => {
       setTopImage(typeBirds[e.target.id - 1].image);
       setNameBird(typeBirds[e.target.id - 1].name);
       setIsNext(style['true-bird']);
-      setHandlerNext(handler);
-      dispatch({ type: 'set score', value: state.score += 5 })
+      setHandlerNext(true);
+      dispatch({ type: 'set score', value: state.score += 5 });
       e.target.className = `${e.target.className} ${style['true-bird']}`;
     } else {
       e.target.className = `${e.target.className} ${style['false-bird']}`;
@@ -73,7 +75,7 @@ const Main = (props) => {
           <BirdInfo bird={currentBirdClick}/>
         </div>
       </div>
-      <button className={`next-level ${isNext}`} onClick={handlerNext}>Next level</button>
+      <button className={`next-level ${isNext}`} onClick={handlerNext ? handler : () => {}}>Next level</button>
     </>
   )
 }

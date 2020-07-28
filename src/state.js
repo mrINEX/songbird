@@ -3,7 +3,7 @@ import birds from './assets/data.birds';
 
 const initPuzzle = {
   screen: 'main-page',
-  mode: 'warm-up',
+  mode: '/warm-up',
   modeAll: ['/warm-up', '/passerines', '/forest_birds', '/song_birds', '/predator_birds', '/sea_birds'],
   isNext: false,
   score: 0,
