@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './header.scss';
 
 const TypeButton = ({title, link}) => {
   return (
-    <Link to={link}>
+    <NavLink to={link} className='type-birds-buttons' activeClassName="active-link">
       { title }
-    </Link>
+    </NavLink>
   );
 }
 

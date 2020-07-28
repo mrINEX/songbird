@@ -11,12 +11,12 @@ const typeBirds = [
   ['Морские птицы', '/sea_birds']
 ];
 
-const Header = () => {
+const Header = ({ score }) => {
   return (
     <header>
       <div className="header_score">
         <div>Songbird</div>
-        <div>Score: <span>0</span></div>
+        <div>Score: <span>{score}</span></div>
       </div>
       <div className="header_type-birds">
         {typeBirds.map((birds, index) => {

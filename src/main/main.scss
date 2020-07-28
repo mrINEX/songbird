@@ -1,0 +1,50 @@
+.main-top {
+  border: 1px solid darkcyan;
+  display: flex;
+}
+
+.top-image,
+.current-click-image {
+  width: 280px;
+  display: block;
+}
+
+.top-details {
+  width: calc(100% - 340px);
+  margin: auto;
+}
+
+.main-center {
+  display: flex;
+}
+
+.main-center__left {
+  width: 40%;
+}
+
+.left-bird {
+  padding: 10px;
+  border: 1px solid darkcyan;
+  cursor: pointer;
+}
+
+.top-player {
+  width: 100%;
+}
+
+.next-level {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.main-center__right {
+  width: 60%;
+}
+
+.bird-info-head {
+  display: flex;
+}
+
+.current-click-info {
+  width: 100%;
+}
