@@ -40,7 +40,7 @@ const Main = (props) => {
     if(typeBirds[e.target.id - 1] === currentBirdGuess) {
       setTopImage(typeBirds[e.target.id - 1].image);
       setNameBird(typeBirds[e.target.id - 1].name);
-      setIsNext(style['true-bird']);
+      setIsNext(style['is-next']);
       setHandlerNext(true);
       dispatch({ type: 'set score', value: state.score += 5 });
       e.target.className = `${e.target.className} ${style['true-bird']}`;

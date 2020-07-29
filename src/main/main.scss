@@ -14,6 +14,7 @@
   margin: 10px 0;
   padding: 8px;
   border-radius: 4px;
+  display: grid;
 }
 .main-center__right {
   width: calc(60% - 10px);
@@ -22,6 +23,9 @@
   margin: 10px 0 10px 10px;
   padding: 8px;
   border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: large;
 }
 
 .wrapper-top-image {
@@ -72,7 +76,7 @@
 
 .next-level {
   width: 100%;
-  background: cadetblue;
+  background: #303030;
   margin: 10px 0;
   padding: 8px;
   border-radius: 4px;
@@ -81,6 +85,7 @@
   color: white;
   font-weight: bold;
   font-size: large;
+  color: grey;
   &:hover {
     color: #2c4145;
   }
@@ -93,4 +98,9 @@
 .current-click-info {
   width: calc(100% - 300px);
   margin: auto;
+}
+
+.about-bird {
+  font-weight: initial;
+  font-size: initial;
 }

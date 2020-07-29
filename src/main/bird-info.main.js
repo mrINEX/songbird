@@ -20,7 +20,7 @@ const BirdInfo = ({ bird }) => {
         </div>
       </div>
       <div>
-        <p>{bird.description}</p>
+        <p className="about-bird">{bird.description}</p>
       </div>
     </>
   );
