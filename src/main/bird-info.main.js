@@ -8,7 +8,9 @@ const BirdInfo = ({ bird }) => {
   return (
     <>
       <div className='bird-info-head'>
-        <img src={bird.image} alt='current-click-bird' className='current-click-image'/>
+        <div className='wrapper-top-image'>
+          <img src={bird.image} alt='current-click-bird' className='current-click-image'/>
+        </div>
         <div className='current-click-info'>
           <div>{bird.name}</div>
           <hr />

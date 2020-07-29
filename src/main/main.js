@@ -52,7 +52,9 @@ const Main = (props) => {
   return (
     <>
       <div className='main-top'>
-        <img src={topImage} alt='bird-none' className='top-image'/>
+        <div className='wrapper-top-image'>
+          <img src={topImage} alt='bird-none' className='top-image'/>
+        </div>
         <div className='top-details'>
           <div>{nameBird}</div>
           <hr />

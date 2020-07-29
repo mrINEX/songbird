@@ -6,10 +6,29 @@
   justify-content: space-between;
 }
 
-.active-link {
-  color: red;
+.header_score {
+  color: white;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .type-birds-buttons {
   text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  &:hover {
+    color: #2c4145;
+  }
+}
+
+.header_type-birds {
+  background: cadetblue;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.active-link {
+  color: #2c4145;
 }

@@ -15,8 +15,8 @@ const Header = ({ score }) => {
   return (
     <header>
       <div className="header_score">
-        <div>Songbird</div>
-        <div>Score: <span>{score}</span></div>
+        <div className='score_logo'>Song<span style={{color: 'cadetblue'}}>bird</span></div>
+        <div className='score_num'>score: <span style={{color: 'cadetblue'}}>{score}</span></div>
       </div>
       <div className="header_type-birds">
         {typeBirds.map((birds, index) => {
