@@ -6,6 +6,8 @@ import randomInteger from '../other/random';
 import style from './main.module.scss';
 import { SongbirdContext } from '../state';
 import { useHistory } from "react-router-dom";
+import correct from '../assets/audio/correct.mp3';
+import error from '../assets/audio/error.mp3';
 
 const Main = (props) => {
   const { typeBirds } = props;
@@ -17,6 +19,7 @@ const Main = (props) => {
   const [nameBird, setNameBird] = useState('*******');
   const [isNext, setIsNext] = useState('');
   const [handlerNext, setHandlerNext] = useState(false);
+  const [score, setScore] = useState(5);
 
   function handler() {
     let level = state.modeAll.indexOf(history.location.pathname);
@@ -31,6 +34,7 @@ const Main = (props) => {
       setCurrentBirdClick(null);
       setIsNext('');
       setHandlerNext(false);
+      setScore(5);
       return typeBirds[randomInteger(0, typeBirds.length - 1)];
     }, [typeBirds]
   );
@@ -42,10 +46,17 @@ const Main = (props) => {
       setNameBird(typeBirds[e.target.id - 1].name);
       setIsNext(style['is-next']);
       setHandlerNext(true);
-      dispatch({ type: 'set score', value: state.score += 5 });
+      dispatch({ type: 'set score', value: state.score += score });
       e.target.className = `${e.target.className} ${style['true-bird']}`;
+      new Audio(correct).play();
+      if ( history.location.pathname === '/sea_birds') {
+        history.push('/');
+        dispatch({ type: 'set screen', value: 'end-page' })
+      }
     } else {
+      setScore(score - 1);
       e.target.className = `${e.target.className} ${style['false-bird']}`;
+      new Audio(error).play();
     }
   }
 
