@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/songbird/static/css/main.b66f361e.chunk.css",
+    "main.js": "/songbird/static/js/main.6c9c6f3d.chunk.js",
+    "main.js.map": "/songbird/static/js/main.6c9c6f3d.chunk.js.map",
+    "runtime-main.js": "/songbird/static/js/runtime-main.710c5ffc.js",
+    "runtime-main.js.map": "/songbird/static/js/runtime-main.710c5ffc.js.map",
+    "static/js/2.b88be8a3.chunk.js": "/songbird/static/js/2.b88be8a3.chunk.js",
+    "static/js/2.b88be8a3.chunk.js.map": "/songbird/static/js/2.b88be8a3.chunk.js.map",
+    "index.html": "/songbird/index.html",
+    "precache-manifest.8b20809d1dc33e0116b6c79e784db28a.js": "/songbird/precache-manifest.8b20809d1dc33e0116b6c79e784db28a.js",
+    "service-worker.js": "/songbird/service-worker.js",
+    "static/css/main.b66f361e.chunk.css.map": "/songbird/static/css/main.b66f361e.chunk.css.map",
+    "static/js/2.b88be8a3.chunk.js.LICENSE.txt": "/songbird/static/js/2.b88be8a3.chunk.js.LICENSE.txt",
+    "static/media/bird-harrier.jpg": "/songbird/static/media/bird-harrier.56639210.jpg",
+    "static/media/bird-pelican.jpg": "/songbird/static/media/bird-pelican.dce55dcd.jpg",
+    "static/media/birdnone.jpg": "/songbird/static/media/birdnone.06a46938.jpg",
+    "static/media/correct.mp3": "/songbird/static/media/correct.8e3d6124.mp3",
+    "static/media/error.mp3": "/songbird/static/media/error.32fc22b2.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.710c5ffc.js",
+    "static/js/2.b88be8a3.chunk.js",
+    "static/css/main.b66f361e.chunk.css",
+    "static/js/main.6c9c6f3d.chunk.js"
+  ]
+}
