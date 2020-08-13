@@ -14,7 +14,7 @@
   margin: 10px 0;
   padding: 8px;
   border-radius: 4px;
-  display: grid;
+  height: 100%;
 }
 .main-center__right {
   width: calc(60% - 10px);
@@ -72,6 +72,8 @@
 
 .top-player {
   width: 100%;
+  height: 40px;
+  display: flex;
 }
 
 .next-level {

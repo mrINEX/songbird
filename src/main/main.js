@@ -8,6 +8,7 @@ import { SongbirdContext } from '../state';
 import { useHistory } from "react-router-dom";
 import correct from '../assets/audio/correct.mp3';
 import error from '../assets/audio/error.mp3';
+import Player from './player.main';
 
 const Main = (props) => {
   const { typeBirds } = props;
@@ -38,6 +39,7 @@ const Main = (props) => {
       return typeBirds[randomInteger(0, typeBirds.length - 1)];
     }, [typeBirds]
   );
+  console.log('guess: ', currentBirdGuess);
 
   function handlerBirds(e) {
     setCurrentBirdClick(typeBirds[e.target.id - 1]);
@@ -69,9 +71,8 @@ const Main = (props) => {
         <div className='top-details'>
           <div>{nameBird}</div>
           <hr />
-          <div>
-            <audio className='top-player' src={currentBirdGuess.audio} controls autoPlay/>
-          </div>
+          <audio className='top-player' src={currentBirdGuess.audio} controls/>
+          {/* <Player src={currentBirdGuess.audio} /> */}
         </div>
       </div>
       <div className='main-center'>

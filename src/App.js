@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import {
-  BrowserRouter, Switch, Route, Redirect, useHistory
+  BrowserRouter, Switch, Route, Redirect,
 } from 'react-router-dom';
 import Header from './header/header';
 import { SongbirdContext } from './state';
@@ -8,7 +8,6 @@ import Main from './main/main';
 
 function App() {
   const { state, dispatch } = useContext(SongbirdContext);
-  const history = useHistory();
 
   function handlerAgain() {
     dispatch({ type: 'set score', value: 0 });
@@ -25,6 +24,7 @@ function App() {
             <p className='result-score-message'>
               Вы набрали <span style={{color: 'cadetblue'}}>{state.score}</span> баллов из <span style={{color: 'cadetblue'}}>30</span> возможных.
             </p>
+            { state.score > 29 && <p className='result-score-win-message'>Поздравляем!<br /> Игра окончена.</p>}
             <button onClick={handlerAgain} className='result-score-button'>пройти викторину ещё раз</button>
           </div>
         }
