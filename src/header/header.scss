@@ -1,5 +1,12 @@
 @import '../scss/style.scss';
 
+.header_type-birds {
+  @include media-mobiles-big {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .header_score,
 .header_type-birds {
   display: flex;
@@ -19,6 +26,9 @@
   font-size: large;
   &:hover {
     color: #2c4145;
+  }
+  @include media-tablet{
+    font-size: 15px;
   }
 }
 

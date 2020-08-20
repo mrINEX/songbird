@@ -1,12 +1,19 @@
+@import '../scss/style.scss';
+
 .main-top {
   background: #303030;
   display: flex;
-  margin: 10px 0;
   padding: 8px;
   border-radius: 4px;
+  @include media-mobiles-big {
+    display: block;
+  }
 }
 .main-center {
   display: flex;
+  @include media-mobiles-big {
+    display: block;
+  }
 }
 .main-center__left {
   width: 40%;
@@ -15,6 +22,9 @@
   padding: 8px;
   border-radius: 4px;
   height: 100%;
+  @include media-mobiles-big {
+    width: initial;
+  }
 }
 .main-center__right {
   width: calc(60% - 10px);
@@ -26,6 +36,11 @@
   color: white;
   font-weight: bold;
   font-size: large;
+  @include media-mobiles-big {
+    width: initial;
+    margin-left: initial;
+    margin: 10px 0;
+  }
 }
 
 .wrapper-top-image {
@@ -53,6 +68,9 @@
   font-size: xx-large;
   font-weight: 900;
   color: white;
+  @include media-mobiles-big {
+    width: initial;
+  }
 }
 
 .left-bird {
@@ -79,7 +97,7 @@
 .next-level {
   width: 100%;
   background: #303030;
-  margin: 10px 0;
+  // margin: 10px 0;
   padding: 8px;
   border-radius: 4px;
   border: none;
@@ -94,11 +112,17 @@
 
 .bird-info-head {
   display: flex;
+  @include media-tablet {
+    display: initial;
+  }
 }
 
 .current-click-info {
   width: calc(100% - 300px);
   margin: auto;
+  @include media-tablet {
+    width: initial;
+  }
 }
 
 .about-bird {

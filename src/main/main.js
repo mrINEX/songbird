@@ -89,7 +89,9 @@ const Main = (props) => {
           <BirdInfo bird={currentBirdClick}/>
         </div>
       </div>
-      <button className={`next-level ${isNext}`} onClick={handlerNext ? handler : () => {}}>Next level</button>
+      <div style={{paddingBottom: '20px'}}>
+        <button className={`next-level ${isNext}`} onClick={handlerNext ? handler : () => {}}>Next level</button>
+      </div>
     </>
   )
 }
