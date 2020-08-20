@@ -8,7 +8,7 @@ import { SongbirdContext } from '../state';
 import { useHistory } from "react-router-dom";
 import correct from '../assets/audio/correct.mp3';
 import error from '../assets/audio/error.mp3';
-import Player from './player.main';
+// import Player from './player.main';
 
 const Main = (props) => {
   const { typeBirds } = props;
