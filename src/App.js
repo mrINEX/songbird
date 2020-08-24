@@ -24,7 +24,12 @@ function App() {
             <p className='result-score-message'>
               Вы набрали <span style={{color: 'cadetblue'}}>{state.score}</span> баллов из <span style={{color: 'cadetblue'}}>30</span> возможных.
             </p>
-            { state.score > 29 && <p className='result-score-win-message'>Поздравляем!<br /> Игра окончена.<br /> Теперь ты знаешь кто чирикнул</p>}
+            { state.score > 29 && 
+            <p className='result-score-win-message'>
+              Поздравляем!<br /> 
+              Игра окончена.<br /> 
+              <span style={{fontSize: '50px', color: 'cadetblue'}}>Теперь ты знаешь кто чирикнул</span>
+            </p>}
             <button onClick={handlerAgain} className='result-score-button'>пройти викторину ещё раз</button>
           </div>
         }

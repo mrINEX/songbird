@@ -58,7 +58,9 @@ const Main = (props) => {
         dispatch({ type: 'set screen', value: 'end-page' })
       }
     } else {
-      setScore(score - 1);
+      if (score > 0) {
+        setScore(score - 1);
+      }
       e.target.className = `${e.target.className} ${style['false-bird']}`;
       new Audio(error).play();
     }
