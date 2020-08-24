@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useState, useContext, useMemo, useRef } from 'react';
 import './main.scss';
 import birdnone from '../assets/birdnone.jpg';
 import BirdInfo from './bird-info.main';
@@ -39,6 +39,7 @@ const Main = (props) => {
       return typeBirds[randomInteger(0, typeBirds.length - 1)];
     }, [typeBirds]
   );
+  const refaudio = useRef(null);
   console.log('guess: ', currentBirdGuess);
 
   function handlerBirds(e) {
@@ -51,6 +52,7 @@ const Main = (props) => {
       dispatch({ type: 'set score', value: state.score += score });
       e.target.className = `${e.target.className} ${style['true-bird']}`;
       new Audio(correct).play();
+      refaudio.current.pause();
       if ( history.location.pathname === '/sea_birds') {
         history.push('/');
         dispatch({ type: 'set screen', value: 'end-page' })
@@ -71,7 +73,7 @@ const Main = (props) => {
         <div className='top-details'>
           <div>{nameBird}</div>
           <hr />
-          <audio className='top-player' src={currentBirdGuess.audio} controls/>
+          <audio className='top-player' ref={refaudio} src={currentBirdGuess.audio} controls/>
           {/* <Player src={currentBirdGuess.audio} /> */}
         </div>
       </div>
